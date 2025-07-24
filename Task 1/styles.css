@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
+  background: #22223b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1000;
+
+
+}
+
+.sidebar.closed {
+  width: 60px;
+}
+
+.logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.sidebar.closed .logo {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.sidebar-links li {
+  margin: 0;
+}
+
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s;
+  font-size: 1.1rem;
+}
+
+.sidebar-links a:hover {
+  background: #4a4e69;
+}
+
+.sidebar.closed .link-text {
+  display: none;
+}
+
+.link-text {
+  margin-left: 16px;
+  transition: opacity 0.2s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 16px;
+  cursor: pointer;
+  outline: none;
+  align-self: flex-end;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #4a4e69;
+}
+
+.main {
+  margin-left: 240px;
+  padding: 32px;
+}
+
+.sidebar.closed ~ .main {
+  margin-left: 60px;
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    width: 180px;
+  }
+  .sidebar.closed {
+    width: 0;
+  }
+  .main-content {
+    margin-left: 180px;
+    padding: 16px;
+  }
+  .sidebar.closed ~ .main {
+    margin-left: 0;
+  }
+}
