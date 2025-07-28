@@ -81,16 +81,14 @@ function CategoryFilter({ categories, selectedCategory, onSelectCategory }) {
     <div className="category-filter">
       <button
         className={selectedCategory === "All" ? "selected" : ""}
-        onClick={() => onSelectCategory("All")}
-      >
+        onClick={() => onSelectCategory("All")}>
         All
       </button>
       {categories.map((cat) => (
         <button
           key={cat}
           className={selectedCategory === cat ? "selected" : ""}
-          onClick={() => onSelectCategory(cat)}
-        >
+          onClick={() => onSelectCategory(cat)}>
           {cat}
         </button>
       ))}
@@ -108,24 +106,21 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         className="border rounded"
         onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-      >
+        disabled={currentPage === 1}>
         Prev
       </button>
       {pages.map((page) => (
         <button
           key={page}
           className={page === currentPage ? "selected" : ""}
-          onClick={() => onPageChange(page)}
-        >
+          onClick={() => onPageChange(page)}>
           {page}
         </button>
       ))}
       <button
         className="border rounded"
         onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-      >
+        disabled={currentPage === totalPages}>
         Next
       </button>
     </div>
