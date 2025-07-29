@@ -89,7 +89,7 @@ const Projects = () => {
   const handleAddSubmit = (e) => {
     e.preventDefault();
     const newProject = {
-      id: Date.now(), // Simple ID generation
+      id: Date.now(), 
       ...formData
     };
     setProjects([...projects, newProject]);
