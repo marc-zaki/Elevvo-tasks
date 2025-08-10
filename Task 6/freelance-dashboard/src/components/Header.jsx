@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { FiBell, FiMenu, FiSearch } from 'react-icons/fi';
 
-
 const Header = () => {
   const [notifications] = useState([
     { id: 1, message: 'Project A has been updated', time: '2 mins ago' },
