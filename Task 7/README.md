@@ -78,11 +78,6 @@ A clean and minimal weather dashboard that displays real-time weather data for a
 - Temperature prediction
 - Weather description
 
-### Error Handling
-- City not found
-- Network errors
-- Geolocation permission denied
-- API errors
 
 ### Responsive Design
 - Mobile-first approach
@@ -108,26 +103,9 @@ A clean and minimal weather dashboard that displays real-time weather data for a
 ## Future Enhancements
 
 - Temperature unit toggle (°C/°F)
-- Weather alerts
-- Historical weather data
 - Multiple city comparison
 - Weather maps
-- Save favorite cities
 - Dark/light theme toggle
-
-## Troubleshooting
-
-### API Key Issues
-- Ensure your API key is valid and active
-- Check if you've exceeded the free tier limits
-
-### Geolocation Issues
-- Ensure location services are enabled in your browser
-- Check if the site has permission to access location
-
-### CORS Issues
-- If running locally, use a local server (e.g., Live Server extension in VS Code)
-- The API supports CORS for direct browser requests
 
 ## License
 

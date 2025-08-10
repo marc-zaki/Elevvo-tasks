@@ -1,5 +1,3 @@
-const API_KEY = 'e5d1d462241521b2fa4f39999a33b381';
-const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const FORECAST_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 
 document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
@@ -14,8 +12,8 @@ async function getWeather(city) {
     
     try {
         const [weather, forecast] = await Promise.all([
-            fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`).then(r => r.json()),
-            fetch(`${FORECAST_URL}?q=${city}&appid=${API_KEY}&units=metric`).then(r => r.json())
+            fetch(`${CONFIG.API_URL}?q=${city}&appid=${CONFIG.API_KEY}&units=${CONFIG.UNITS}`).then(r => r.json()),
+            fetch(`${FORECAST_URL}?q=${city}&appid=${CONFIG.API_KEY}&units=${CONFIG.UNITS}`).then(r => r.json())
         ]);
         
         document.getElementById('cityName').textContent = `${weather.name}, ${weather.sys.country}`;
@@ -59,8 +57,8 @@ async function getWeatherByCoords(lat, lon) {
     
     try {
         const [weather, forecast] = await Promise.all([
-            fetch(`${API_URL}?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`).then(r => r.json()),
-            fetch(`${FORECAST_URL}?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`).then(r => r.json())
+            fetch(`${CONFIG.API_URL}?lat=${lat}&lon=${lon}&appid=${CONFIG.API_KEY}&units=${CONFIG.UNITS}`).then(r => r.json()),
+            fetch(`${FORECAST_URL}?lat=${lat}&lon=${lon}&appid=${CONFIG.API_KEY}&units=${CONFIG.UNITS}`).then(r => r.json())
         ]);
         
         document.getElementById('cityName').textContent = `${weather.name}, ${weather.sys.country}`;
